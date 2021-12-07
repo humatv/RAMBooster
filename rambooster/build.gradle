@@ -30,14 +30,3 @@ android {
 dependencies {
 
 }
-
-
-configurations {
-    archives {
-        extendsFrom configurations.default
-    }
-}
-signing {
-    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
-    sign configurations.archives
-}
